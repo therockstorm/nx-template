@@ -15,7 +15,7 @@ TypeScript NX template with SvelteKit and Tailwind available at [nx-template.pag
 
 ## Usage
 
-This project uses [commitlint](https://github.com/conventional-changelog/commitlint) to enforce commit messages.
+This project uses [NX](https://nx.dev/getting-started/intro) for monorepo management and [commitlint](https://github.com/conventional-changelog/commitlint) to enforce commit messages.
 
 ### Common commands
 
@@ -23,14 +23,33 @@ This project uses [commitlint](https://github.com/conventional-changelog/commitl
 # Install dependencies
 npm install
 
-# Start dev server
+# Run commands defined in `project.json` or `package.json` for specific projects
+# Example commands may include build, lint, and test
+npx nx run [PROJECT]:[COMMAND]
+
+# For example, start the dev server for the `site` project
 npx nx dev site --open
 
-# Create prod version
-npx nx build site
+# Prior to opening a PR, format, build, lint, and test affected projects
+# Only `nx.json` `cacheableOperations` are valid for use with `affected`
+npx nx format:write && \
+npx nx affected:build && \
+npx nx affected:lint && \
+npx nx affected:test
 
-# Preview prod version
-npx nx preview site
+# Generate new buildable library
+npx nx generate @nrwl/node:library [PROJECT] --buildable
+
+# Rename a project
+npx nx generate move [NEW_NAME] --projectName [CURRENT_NAME]
+
+# Show dependency graph
+npx nx dep-graph
+
+# To upgrade NX,
+npx nx migrate @nrwl/workspace@latest && \
+npm install && \
+npx nx migrate --run-migrations
 ```
 
 ## Contributing

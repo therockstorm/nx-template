@@ -25,7 +25,7 @@
     "format": "prettier --plugin-search-dir . --write .",
     "lint": "npm run check && prettier --plugin-search-dir . --check . && eslint .",
     "preview": "vite preview",
-    "test": "npm run test-unit && npm run test-e2e",
+    "test": "CI=true npm run test-unit && npm run test-e2e",
     "test-e2e": "playwright test",
     "test-unit": "vitest"
   }

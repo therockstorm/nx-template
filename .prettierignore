@@ -1,2 +1,12 @@
-/dist
-/coverage
+.DS_Store
+.env
+.env.*
+!.env.example
+package-lock.json
+
+.svelte-kit
+build
+coverage
+dist
+node_modules
+package
