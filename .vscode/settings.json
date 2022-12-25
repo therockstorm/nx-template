@@ -1,0 +1,29 @@
+{
+  "[html]": {
+    "editor.defaultFormatter": "vscode.html-language-features"
+  },
+  "cSpell.words": [
+    "Buildable",
+    "cacheable",
+    "commitlint",
+    "nosniff",
+    "nrwl",
+    "Qualys",
+    "SAMEORIGIN",
+    "sonarjs",
+    "sveltekit",
+    "tailwindcss",
+    "therockstorm",
+    "unpublish"
+  ],
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "eslint.validate": ["typescript"],
+  "files.watcherExclude": {
+    "**/dist": true,
+    "**/cache": true,
+    "**/cdk.out": true,
+    "**/coverage": true,
+    "**/node_modules": true,
+    "**/tmp": true
+  }
+}

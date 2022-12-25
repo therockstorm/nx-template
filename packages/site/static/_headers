@@ -1,0 +1,10 @@
+/*
+  Access-Control-Allow-Methods: GET
+  Content-Security-Policy: base-uri 'none'; default-src 'self'; frame-ancestors 'none'; img-src 'self' data:; object-src 'none'; upgrade-insecure-requests;
+  Permissions-Policy: accelerometer=(), camera=(), document-domain=(), encrypted-media=(), gyroscope=(), interest-cohort=(), magnetometer=(), microphone=(), midi=(), payment=(), picture-in-picture=(), publickey-credentials-get=(), sync-xhr=(), usb=(), xr-spatial-tracking=(), geolocation=()
+  Referrer-Policy: strict-origin-when-cross-origin
+  Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
+  X-Content-Type-Options: nosniff
+  X-DNS-Prefetch-Control: on
+  X-Frame-Options: SAMEORIGIN
+  X-XSS-Protection: 1; mode=block

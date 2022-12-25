@@ -1,0 +1,23 @@
+name: CI
+
+on:
+  push: { branches: [main] }
+  pull_request:
+
+env:
+  CI: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          ref: ${{ github.event.pull_request.head.ref }}
+          fetch-depth: 0
+      - uses: actions/setup-node@v3
+        with: { cache: 'npm', node-version: '16' }
+      - run: npm ci
+      - run: npx playwright install-deps chromium
+      - run: npx nx affected --target=lint --base=main~1 --head=main
+      - run: npx nx affected --target=test --base=main~1 --head=main
